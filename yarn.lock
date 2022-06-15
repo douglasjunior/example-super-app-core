@@ -3038,6 +3038,20 @@ event-target-shim@^5.0.0, event-target-shim@^5.0.1:
   resolved "https://registry.yarnpkg.com/event-target-shim/-/event-target-shim-5.0.1.tgz#5d4d3ebdf9583d63a5333ce2deb7480ab2b05789"
   integrity sha512-i/2XbnSz/uxRCU6+NdVJgKWDTM427+MqYbkQzD321DuCQJUqOuJKIA0IM2+W2xtYHdKOmZ4dR6fExsd4SXL+WQ==
 
+"example-super-app-mini-1@git+https://github.com/douglasjunior/example-super-app-mini-1.git":
+  version "0.0.1"
+  resolved "git+https://github.com/douglasjunior/example-super-app-mini-1.git#a8b6ebbea2fbb1bdb6f37da7a572bde77a097c28"
+  dependencies:
+    react "17.0.2"
+    react-native "0.68.2"
+
+"example-super-app-mini-2@git+https://github.com/douglasjunior/example-super-app-mini-2.git":
+  version "0.0.1"
+  resolved "git+https://github.com/douglasjunior/example-super-app-mini-2.git#08c7c73c2c2785f22a7aeac13119a81b5ab9bc25"
+  dependencies:
+    react "17.0.2"
+    react-native "0.68.2"
+
 exec-sh@^0.3.2:
   version "0.3.6"
   resolved "https://registry.yarnpkg.com/exec-sh/-/exec-sh-0.3.6.tgz#ff264f9e325519a60cb5e273692943483cca63bc"
