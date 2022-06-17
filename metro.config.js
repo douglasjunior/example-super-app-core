@@ -1,10 +1,3 @@
-/**
- * Metro configuration for React Native
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 module.exports = {
   transformer: {
     getTransformOptions: async () => ({
@@ -13,5 +6,13 @@ module.exports = {
         inlineRequires: true,
       },
     }),
+  },
+  resolver: {
+    extraNodeModules: {
+      // Permite rodar o Core com live reload nos mini-apps
+      // 'mini-app-package-name': '/path/to/mini-app/folder',
+      'example-super-app-mini-1': '../example-super-app-mini-1',
+      'example-super-app-mini-2': '../example-super-app-mini-2',
+    },
   },
 };
