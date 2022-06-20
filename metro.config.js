@@ -1,3 +1,12 @@
+const path = require('path');
+const exclusionList = require('metro-config/src/defaults/exclusionList');
+
+const {
+  extraNodeModules,
+  moduleExclusions,
+  moduleMappings,
+} = require('./processModuleSymLinks.js');
+
 module.exports = {
   transformer: {
     getTransformOptions: async () => ({
@@ -7,12 +16,14 @@ module.exports = {
       },
     }),
   },
+
   resolver: {
-    extraNodeModules: {
-      // Permite rodar o Core com live reload nos mini-apps
-      // 'mini-app-package-name': '/path/to/mini-app/folder',
-      'example-super-app-mini-1': '../example-super-app-mini-1',
-      'example-super-app-mini-2': '../example-super-app-mini-2',
-    },
+    extraNodeModules: extraNodeModules,
+    blockList: exclusionList(moduleExclusions),
   },
+
+  projectRoot: path.resolve(__dirname),
+
+  // Also additionally watch all the mapped local directories for changes to support live updates.
+  watchFolders: Object.values(moduleMappings),
 };
