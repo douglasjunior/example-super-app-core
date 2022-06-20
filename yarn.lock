@@ -3106,7 +3106,7 @@ event-target-shim@^5.0.0, event-target-shim@^5.0.1:
 
 "example-super-app-mini-1@git+https://github.com/douglasjunior/example-super-app-mini-1.git":
   version "0.0.1"
-  resolved "git+https://github.com/douglasjunior/example-super-app-mini-1.git#9fe2eecc019f4e2a1fd1ced87b6f9216529e168e"
+  resolved "git+https://github.com/douglasjunior/example-super-app-mini-1.git#6b8495ba5c25f8e2db9d52b27883abf7f7e2a8b4"
   dependencies:
     "@react-navigation/bottom-tabs" "^6.3.1"
     "@react-navigation/native" "^6.0.10"
@@ -3118,7 +3118,7 @@ event-target-shim@^5.0.0, event-target-shim@^5.0.1:
 
 "example-super-app-mini-2@git+https://github.com/douglasjunior/example-super-app-mini-2.git":
   version "0.0.1"
-  resolved "git+https://github.com/douglasjunior/example-super-app-mini-2.git#0ad1be9500e3e72fcc60efb3224579b6824db9a0"
+  resolved "git+https://github.com/douglasjunior/example-super-app-mini-2.git#4fb3aaa9ca26d2105a2ed420903fc3c3a7e6deb2"
   dependencies:
     "@react-navigation/bottom-tabs" "^6.3.1"
     "@react-navigation/native" "^6.0.10"
