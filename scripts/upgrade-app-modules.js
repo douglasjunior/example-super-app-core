@@ -1,17 +1,17 @@
 const packageJson = require('../package.json');
 const {exec} = require('child_process');
 
-const MINI_APP_PREFFIX = 'example-super-app';
+const MODULES_PREFFIX = 'example-super-app';
 
-const miniApps = Object.keys(packageJson.dependencies)
-  .filter(packageName => packageName.startsWith(MINI_APP_PREFFIX))
+const modulesToUpdate = Object.keys(packageJson.dependencies)
+  .filter(packageName => packageName.startsWith(MODULES_PREFFIX))
   .map(packageName => {
     const packageVersion = packageJson.dependencies[packageName];
     return packageName + '@' + packageVersion;
   })
   .join(' ');
 
-const command = 'yarn upgrade ' + miniApps;
+const command = 'yarn upgrade ' + modulesToUpdate;
 
 console.log('running:', command);
 

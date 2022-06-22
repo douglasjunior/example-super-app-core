@@ -9,6 +9,12 @@ const localModulesPath = path.resolve(__dirname, 'local_modules');
 fs.rmSync(localModulesPath, {force: true, recursive: true});
 fs.mkdirSync(localModulesPath, {recursive: true});
 
+let LOG_ENABLED = false;
+
+function setLogEnabled(enabled) {
+  LOG_ENABLED = enabled;
+}
+
 function ensureDirectoryExistence(dirPath) {
   const dirname = path.dirname(dirPath);
   if (!fs.existsSync(dirname)) {
@@ -55,23 +61,33 @@ function watchAndSyncModule(modulePath, linkedModulePath) {
 
   watcher
     .on('add', originalPath => {
-      console.log('\x1b[34m', `File ${originalPath} has been added`, '\x1b[0m');
+      if (LOG_ENABLED) {
+        console.log(
+          '\x1b[34m',
+          `File ${originalPath} has been added`,
+          '\x1b[0m',
+        );
+      }
       copyAddedOrChangedFile(originalPath);
     })
     .on('change', originalPath => {
-      console.log(
-        '\x1b[32m',
-        `File ${originalPath} has been changed`,
-        '\x1b[0m',
-      );
+      if (LOG_ENABLED) {
+        console.log(
+          '\x1b[32m',
+          `File ${originalPath} has been changed`,
+          '\x1b[0m',
+        );
+      }
       copyAddedOrChangedFile(originalPath);
     })
     .on('unlink', originalPath => {
-      console.log(
-        '\x1b[35m',
-        `File ${originalPath} has been removed`,
-        '\x1b[0m',
-      );
+      if (LOG_ENABLED) {
+        console.log(
+          '\x1b[35m',
+          `File ${originalPath} has been removed`,
+          '\x1b[0m',
+        );
+      }
       unlinkDeletedFile(originalPath);
     });
 }
@@ -86,7 +102,7 @@ function linkModules() {
   const modulesNames = Object.keys(modulesToLink);
 
   return modulesNames.reduce((config, moduleName) => {
-    const modulePath = modulesToLink[moduleName];
+    const modulePath = path.resolve(modulesToLink[moduleName]);
     const linkedModulePath = makeLinkedModulePath(moduleName);
 
     watchAndSyncModule(modulePath, linkedModulePath);
@@ -121,4 +137,5 @@ const watchFolders = Object.values(linkedLocalModules);
 module.exports = {
   extraNodeModules,
   watchFolders,
+  setLogEnabled,
 };
