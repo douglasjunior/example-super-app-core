@@ -1,11 +1,6 @@
-const path = require('path');
-const exclusionList = require('metro-config/src/defaults/exclusionList');
+const {URL} = require('url');
 
-const {
-  extraNodeModules,
-  moduleExclusions,
-  moduleMappings,
-} = require('./processModuleSymLinks.js');
+const {extraNodeModules, watchFolders} = require('./link-local-modules');
 
 module.exports = {
   transformer: {
@@ -18,12 +13,23 @@ module.exports = {
   },
 
   resolver: {
-    extraNodeModules: extraNodeModules,
-    blockList: exclusionList(moduleExclusions),
+    extraNodeModules,
   },
 
-  projectRoot: path.resolve(__dirname),
+  watchFolders,
 
-  // Also additionally watch all the mapped local directories for changes to support live updates.
-  watchFolders: Object.values(moduleMappings),
+  server: {
+    enhanceMiddleware(Middleware, Server) {
+      console.log({Server});
+      return (request, response, next) => {
+        // TODO: criar rota para automatizar o vínculo de um módulo local
+        // sem necessidade de usar o arquivo "link-local-modules.properties"
+        const uri = new URL(request.originalUrl, 'http://localhost');
+        console.log({
+          uri,
+        });
+        return Middleware(request, response, next);
+      };
+    },
+  },
 };
