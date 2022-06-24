@@ -52,7 +52,9 @@ const Input: React.FC<TextInputProps> = props => {
 
 const LoginScreen: React.FC = () => {
   const navigation = useNativeStackNavigation();
-  const {setLogin} = useAppContext();
+  const {
+    private: {setLogin},
+  } = useAppContext();
 
   const handlePress = useCallback(() => {
     setLogin(MOCKED_USER);

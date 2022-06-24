@@ -3155,7 +3155,7 @@ event-target-shim@^5.0.0, event-target-shim@^5.0.1:
 
 "example-super-app-mock@git+https://github.com/douglasjunior/example-super-app-mock.git":
   version "0.0.1"
-  resolved "git+https://github.com/douglasjunior/example-super-app-mock.git#a1332642d1c10d681c324449f81f62033023f477"
+  resolved "git+https://github.com/douglasjunior/example-super-app-mock.git#6dc47eef9a2a6606084fb71a54bb84ffce2a2c19"
   dependencies:
     "@react-navigation/native" "6.0.10"
     "@react-navigation/native-stack" "6.6.2"
