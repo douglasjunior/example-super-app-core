@@ -1,5 +1,5 @@
 type NavigatorParamList = {
-  Start: undefined;
+  Login: undefined;
   Home: undefined;
   TabMini1: undefined;
   TabMini2: undefined;
