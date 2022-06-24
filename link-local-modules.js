@@ -2,6 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const dotenv = require('dotenv');
 const chokidar = require('chokidar');
+const {URL} = require('url');
+const packageJson = require('./package.json');
 
 const dotFilePath = path.resolve(__dirname, 'link-local-modules.properties');
 const localModulesPath = path.resolve(__dirname, 'local_modules');
@@ -118,6 +120,8 @@ function linkModules() {
 
 const linkedLocalModules = linkModules();
 
+const watchFolders = Object.values(linkedLocalModules);
+
 const extraNodeModules = new Proxy(
   // Provide the set of known local package mappings.
   linkedLocalModules,
@@ -132,10 +136,42 @@ const extraNodeModules = new Proxy(
   },
 );
 
-const watchFolders = Object.values(linkedLocalModules);
+function isSyncRequest(uri) {
+  return uri.pathname === '/sync-local-module';
+}
+
+function validateModuleName(moduleName) {
+  console.log(packageJson.dependencies, {
+    moduleName,
+  });
+  return Boolean(packageJson.dependencies[moduleName]);
+}
+
+function handleSyncRequest(Middleware, Server) {
+  return (request, response, next) => {
+    setLogEnabled(true);
+
+    const uri = new URL(request.originalUrl, 'http://localhost');
+
+    if (!isSyncRequest(uri)) {
+      return Middleware(request, response, next);
+    }
+
+    const moduleName = uri.searchParams.get('name');
+
+    if (!validateModuleName(moduleName)) {
+      response.statusCode = 404;
+      return response.end();
+    }
+
+    response.write(__dirname);
+
+    response.end();
+  };
+}
 
 module.exports = {
   extraNodeModules,
   watchFolders,
-  setLogEnabled,
+  handleSyncRequest,
 };
