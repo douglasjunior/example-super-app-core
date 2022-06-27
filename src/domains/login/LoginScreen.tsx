@@ -17,6 +17,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 24,
   },
+  input: {
+    borderWidth: 1,
+    borderColor: 'gray',
+    marginBottom: 16,
+    height: 55,
+    borderRadius: 4,
+    paddingHorizontal: 16,
+    fontSize: 20,
+  },
+  wellcome: {textAlign: 'center', fontSize: 24, marginBottom: 24},
 });
 
 const MOCKED_USER: LoginType = {
@@ -26,8 +36,8 @@ const MOCKED_USER: LoginType = {
     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c',
   loggedUser: {
     id: 'a1b2c3',
-    name: 'Gabriel verão',
-    email: 'jhon.doe@mail.com',
+    name: 'Gabriel Verão',
+    email: 'verao@mail.com',
   },
   roles: [],
 };
@@ -37,15 +47,7 @@ const Input: React.FC<TextInputProps> = props => {
     <TextInput
       {...props}
       underlineColorAndroid="transparent"
-      style={{
-        borderWidth: 1,
-        borderColor: 'gray',
-        marginBottom: 16,
-        height: 55,
-        borderRadius: 4,
-        paddingHorizontal: 16,
-        fontSize: 20,
-      }}
+      style={styles.input}
     />
   );
 };
@@ -63,9 +65,7 @@ const LoginScreen: React.FC = () => {
 
   return (
     <View style={styles.context}>
-      <Text style={{textAlign: 'center', fontSize: 24, marginBottom: 24}}>
-        Bem-vindo ao Super App
-      </Text>
+      <Text style={styles.wellcome}>Bem-vindo ao Super App</Text>
       <Input placeholder="E-mail ou CPF" />
       <Input placeholder="Senha" />
       <Button title="Entrar" onPress={handlePress} />

@@ -1,4 +1,4 @@
-const handleSyncRequest = require('./metro-handle-sync-request');
+const metroHandleSyncRequest = require('example-super-app-tools/lib/metro-handle-sync-request');
 
 module.exports = {
   transformer: {
@@ -11,6 +11,6 @@ module.exports = {
   },
 
   server: {
-    enhanceMiddleware: handleSyncRequest,
+    enhanceMiddleware: metroHandleSyncRequest,
   },
 };
