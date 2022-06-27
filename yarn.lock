@@ -2317,7 +2317,7 @@ char-regex@^1.0.2:
   resolved "https://registry.yarnpkg.com/char-regex/-/char-regex-1.0.2.tgz#d744358226217f981ed58f479b1d6bcc29545dcf"
   integrity sha512-kWWXztvZ5SBQV+eRgKFeh8q5sLuZY2+8WUIzlxWVTg+oGwY14qylx1KbKzHd8P6ZYkAg0xyIDU9JMHhyJMZ1jw==
 
-chokidar@3.5.3, chokidar@^3.5.3:
+chokidar@3.5.3:
   version "3.5.3"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.5.3.tgz#1cf37c8707b932bd1af1ae22c0432e2acd1903bd"
   integrity sha512-Dr3sfKRP6oTcjf2JmUmFJfeVMvXBdegxB0iVQ5eb2V10uFJUCAS8OByZdVAyVb8xXNz3GjjTgj9kLWsZTqE6kw==
@@ -2768,11 +2768,6 @@ domexception@^2.0.1:
   dependencies:
     webidl-conversions "^5.0.0"
 
-dotenv@16.0.1:
-  version "16.0.1"
-  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-16.0.1.tgz#8f8f9d94876c35dac989876a5d3a82a267fdce1d"
-  integrity sha512-1K6hR6wtk2FviQ4kEiSjFiH5rpzEVi8WW0x96aztHVMhEspNpc4DVOUTEHtEva5VThQ8IaBX1Pe4gSzpVVUsKQ==
-
 ee-first@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
@@ -3131,11 +3126,11 @@ event-target-shim@^5.0.0, event-target-shim@^5.0.1:
 
 "example-super-app-mini-1@git+https://github.com/douglasjunior/example-super-app-mini-1.git":
   version "0.0.1"
-  resolved "git+https://github.com/douglasjunior/example-super-app-mini-1.git#64cdac7521d0df5eecbe570ea7ec7a5a077cbfe2"
+  resolved "git+https://github.com/douglasjunior/example-super-app-mini-1.git#47d833da74184e677dde220557d176e2ed66a9fc"
   dependencies:
-    "@react-navigation/bottom-tabs" "6.3.1"
     "@react-navigation/native" "6.0.10"
     "@react-navigation/native-stack" "6.6.2"
+    example-super-app-mock "git+https://github.com/douglasjunior/example-super-app-mock.git"
     react "17.0.2"
     react-native "0.68.2"
     react-native-safe-area-context "4.3.1"
@@ -3143,11 +3138,12 @@ event-target-shim@^5.0.0, event-target-shim@^5.0.1:
 
 "example-super-app-mini-2@git+https://github.com/douglasjunior/example-super-app-mini-2.git":
   version "0.0.1"
-  resolved "git+https://github.com/douglasjunior/example-super-app-mini-2.git#7a6fa4e479e7bd65c226a0948d56f2409f429780"
+  resolved "git+https://github.com/douglasjunior/example-super-app-mini-2.git#269ac5bb5d17c6d2cc950e8bc0c83d6ae0318b3e"
   dependencies:
     "@react-navigation/bottom-tabs" "6.3.1"
     "@react-navigation/native" "6.0.10"
     "@react-navigation/native-stack" "6.6.2"
+    example-super-app-mock "git+https://github.com/douglasjunior/example-super-app-mock.git"
     react "17.0.2"
     react-native "0.68.2"
     react-native-safe-area-context "4.3.1"
@@ -3155,7 +3151,7 @@ event-target-shim@^5.0.0, event-target-shim@^5.0.1:
 
 "example-super-app-mock@git+https://github.com/douglasjunior/example-super-app-mock.git":
   version "0.0.1"
-  resolved "git+https://github.com/douglasjunior/example-super-app-mock.git#6dc47eef9a2a6606084fb71a54bb84ffce2a2c19"
+  resolved "git+https://github.com/douglasjunior/example-super-app-mock.git#af716c66823ce4b5629494c609a857bf6cb32719"
   dependencies:
     "@react-navigation/native" "6.0.10"
     "@react-navigation/native-stack" "6.6.2"
@@ -3166,10 +3162,10 @@ event-target-shim@^5.0.0, event-target-shim@^5.0.1:
 
 "example-super-app-tools@git+https://github.com/douglasjunior/example-super-app-tools.git":
   version "1.0.0"
-  resolved "git+https://github.com/douglasjunior/example-super-app-tools.git#c7c9818cbd0aa4ce4298228fa319e7f41c675b9a"
+  resolved "git+https://github.com/douglasjunior/example-super-app-tools.git#32e197baecb99b19c5843e0b8c22829132bd128c"
   dependencies:
-    chokidar "^3.5.3"
-    node-fetch "^2.6.7"
+    chokidar "3.5.3"
+    node-fetch "2.6.7"
 
 exec-sh@^0.3.2:
   version "0.3.6"
@@ -5343,7 +5339,7 @@ node-dir@^0.1.17:
   dependencies:
     minimatch "^3.0.2"
 
-node-fetch@^2.2.0, node-fetch@^2.6.0, node-fetch@^2.6.7:
+node-fetch@2.6.7, node-fetch@^2.2.0, node-fetch@^2.6.0:
   version "2.6.7"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.7.tgz#24de9fba827e3b4ae44dc8b20256a379160052ad"
   integrity sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==

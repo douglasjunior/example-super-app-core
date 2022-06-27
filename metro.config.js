@@ -1,8 +1,4 @@
-const {
-  extraNodeModules,
-  watchFolders,
-  handleSyncRequest,
-} = require('./link-local-modules');
+const handleSyncRequest = require('./metro-handle-sync-request');
 
 module.exports = {
   transformer: {
@@ -13,12 +9,6 @@ module.exports = {
       },
     }),
   },
-
-  resolver: {
-    extraNodeModules,
-  },
-
-  watchFolders,
 
   server: {
     enhanceMiddleware: handleSyncRequest,
