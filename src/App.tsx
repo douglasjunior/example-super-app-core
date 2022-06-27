@@ -1,5 +1,5 @@
 import {NavigationContainer} from '@react-navigation/native';
-import {AppProvider} from 'example-super-app-mock';
+import {AppProvider} from 'example-super-app-context';
 import React from 'react';
 import {SafeAreaView} from 'react-native';
 

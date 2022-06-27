@@ -3124,6 +3124,17 @@ event-target-shim@^5.0.0, event-target-shim@^5.0.1:
   resolved "https://registry.yarnpkg.com/event-target-shim/-/event-target-shim-5.0.1.tgz#5d4d3ebdf9583d63a5333ce2deb7480ab2b05789"
   integrity sha512-i/2XbnSz/uxRCU6+NdVJgKWDTM427+MqYbkQzD321DuCQJUqOuJKIA0IM2+W2xtYHdKOmZ4dR6fExsd4SXL+WQ==
 
+"example-super-app-context@git+https://github.com/douglasjunior/example-super-app-context.git":
+  version "0.0.1"
+  resolved "git+https://github.com/douglasjunior/example-super-app-context.git#07099d849d571c5cfedf35c660c1023565a7ff97"
+  dependencies:
+    "@react-navigation/native" "6.0.10"
+    "@react-navigation/native-stack" "6.6.1"
+    react "17.0.2"
+    react-native "0.68.2"
+    react-native-safe-area-context "4.3.1"
+    react-native-screens "3.13.1"
+
 "example-super-app-mini-1@git+https://github.com/douglasjunior/example-super-app-mini-1.git":
   version "0.0.1"
   resolved "git+https://github.com/douglasjunior/example-super-app-mini-1.git#369ea6a432e7b3c7278278b01ba243034a3ec209"

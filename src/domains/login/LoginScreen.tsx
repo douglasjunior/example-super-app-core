@@ -7,9 +7,9 @@ import {
   TextInputProps,
   View,
 } from 'react-native';
-import {useAppContext} from 'example-super-app-mock';
+import {useAppContext} from 'example-super-app-context';
+import {LoginType} from 'example-super-app-context/lib/types';
 import {useNativeStackNavigation} from '../../hooks/useNavigation';
-import {LoginType} from 'example-super-app-mock/lib/types';
 
 const styles = StyleSheet.create({
   context: {
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   wellcome: {textAlign: 'center', fontSize: 24, marginBottom: 24},
 });
 
-const MOCKED_USER: LoginType = {
+const FAKE_USER: LoginType = {
   accessToken:
     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c',
   refreshToken:
@@ -59,7 +59,7 @@ const LoginScreen: React.FC = () => {
   } = useAppContext();
 
   const handlePress = useCallback(() => {
-    setLogin(MOCKED_USER);
+    setLogin(FAKE_USER);
     navigation.replace('Home');
   }, [navigation, setLogin]);
 
