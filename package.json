@@ -10,6 +10,7 @@
     "lint": "eslint .",
     "sync-with-core": "npx sync-with-core",
     "upgrade-app-modules": "npx upgrade-app-modules",
+    "validate-dependencies": "npx validate-dependencies",
     "pod-install": "npx pod-install",
     "postinstall": "npm run pod-install",
     "prepare": "husky install"
