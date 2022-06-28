@@ -3131,7 +3131,7 @@ events@3.3.0:
 
 "example-super-app-context@git+https://github.com/douglasjunior/example-super-app-context.git":
   version "0.0.1"
-  resolved "git+https://github.com/douglasjunior/example-super-app-context.git#68cede670676df5e0f9c7bef22d05c53e03ea52e"
+  resolved "git+https://github.com/douglasjunior/example-super-app-context.git#1813c82b71131221784a18bbf0da110a095aea3f"
   dependencies:
     "@react-navigation/native" "6.0.10"
     "@react-navigation/native-stack" "6.6.2"
@@ -3143,7 +3143,7 @@ events@3.3.0:
 
 "example-super-app-mini-1@git+https://github.com/douglasjunior/example-super-app-mini-1.git":
   version "0.0.1"
-  resolved "git+https://github.com/douglasjunior/example-super-app-mini-1.git#97a412b9dd9e521a1ac7a35d299850964bc3097f"
+  resolved "git+https://github.com/douglasjunior/example-super-app-mini-1.git#30e0ad76f86d19cc4cbffff9735d200eb8cd1868"
   dependencies:
     "@react-navigation/native" "6.0.10"
     "@react-navigation/native-stack" "6.6.2"
@@ -3155,7 +3155,7 @@ events@3.3.0:
 
 "example-super-app-mini-2@git+https://github.com/douglasjunior/example-super-app-mini-2.git":
   version "0.0.1"
-  resolved "git+https://github.com/douglasjunior/example-super-app-mini-2.git#9705775fe49a0b7c4f84af573e061458116abf72"
+  resolved "git+https://github.com/douglasjunior/example-super-app-mini-2.git#53aaefc55448bd0083b0fb25f1e8b73892a7fd89"
   dependencies:
     "@react-navigation/bottom-tabs" "6.3.1"
     "@react-navigation/native" "6.0.10"
