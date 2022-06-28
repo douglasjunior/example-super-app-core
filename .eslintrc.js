@@ -13,4 +13,7 @@ module.exports = {
       },
     },
   ],
+  global: {
+    jest: false,
+  },
 };
