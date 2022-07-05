@@ -1,21 +1,18 @@
 import { NavigationContainer } from '@react-navigation/native';
-import { AppProvider, setup } from 'example-super-app-context';
-import React, { useEffect } from 'react';
+import { AppProvider } from 'example-super-app-context';
+import React from 'react';
 import { SafeAreaView } from 'react-native';
 
 import RootStackNavigator from './navigation/RootStackNavigator';
 
-const App: React.FC = () => {
+const appConfig = {
+  appName: 'Super App',
+  reactotron: true,
+}
 
-  useEffect(() => {
-    setup({
-      appName: 'Super App',
-      reactotron: true,
-    });
-  }, []);
-  
+const App: React.FC = () => {
   return (
-    <AppProvider>
+    <AppProvider config={appConfig} >
       <NavigationContainer>
         <SafeAreaView style={{ flex: 1 }}>
           <RootStackNavigator />
